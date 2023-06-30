@@ -1,0 +1,487 @@
+.chat-col{
+    right: -100vw;
+    bottom: 0;
+    top: 22px;
+    border-radius: 2%;
+    z-index: 1000;
+    position: fixed;
+    color: #fff;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 40px;
+    padding-top: 15px;
+    min-height: 100vh;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.chat-col.chat-opened {
+    right: 0;
+    margin-bottom: 3%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.3s ease !important;
+    -webkit-transition: all 0.3s ease !important;
+    -moz-transition: all 0.3s ease !important;
+}
+
+#chat-messages{
+    height: 68.5vh;
+    margin-bottom: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+}
+
+#chat-messages::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;
+}
+
+.chat-box{
+    bottom: 88px;
+    position: absolute;
+    border: 0;
+    border-top: 1px groove white;
+    border-left: 1px groove white;
+    font-size: small;
+}
+
+.chat-box::placeholder{
+    font-size: small;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.chat-box,
+.chat-box:focus{
+    resize: none !important;
+    box-shadow: none !important;
+}
+
+.chat-row{
+    height: 100%;
+    overflow-x: scroll;
+}
+
+/* .main{
+    padding-top: 40px;
+} */
+
+
+.remote-video{
+    width:100%;
+    height:auto;
+    max-height: 90vh;
+    border-radius: 12px;
+    padding: 0.44rem 0.6rem  0.44rem 0.6rem ;
+    min-width:80px;
+}
+
+.loc-video{
+    width:100%;
+    height:auto;
+    max-height: 90vh;
+    border-radius: 12px;
+    padding: 0.44rem 0.6rem  0.44rem 0.6rem ;
+    min-width:80px;
+}
+
+.vid-card{
+    background-color: #1c2023!important;
+    border:1px solid rgb(250 250 250 / 49%)!important;
+    border-radius: .6rem!important;
+}
+
+#videos{
+    padding: 0.44rem 0.6rem  0.44rem 0.6rem ;
+}
+
+.remote-video-controls{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color:rgba(0, 0, 0, 0.5);
+    z-index:300000;
+    padding: 10px 10px;
+    min-width: 80px;
+    width:10vw;
+    text-align: center;
+    visibility: hidden;
+    border-radius: 8px;
+}
+
+@media  (max-width:768px){
+    .remote-video-controls{
+        width: 15vw;
+    }
+    }
+
+
+
+/* css for displaying remote names */
+.participant-names{
+    position:absolute;
+    bottom:0;
+    left:17%;
+    transform: translate(-50%,-50%);
+    background-color:rgba(0, 0, 0, 0.5);
+    z-index:299999;
+    padding: 5px 5px;
+    min-width: 80px;
+    width:25%;
+    text-align: center;
+    color:white;
+    border-radius: 8px;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+}
+
+
+.remote-video:hover + .remote-video-controls,
+.remote-video-controls:hover{
+    visibility: visible;
+}
+
+
+.local-video{
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width:15vw;
+    border-radius: 12px;
+    padding: 0.44rem 0.6rem  0.44rem 0.6rem ;
+}
+
+@media (max-width:780px) {
+    .res-nav {
+      text-align: center !important;
+    }
+}
+
+
+.mirror-mode{
+    -ms-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+
+.sender-info{
+    font-size: smaller;
+    margin-top: 5px;
+    align-self: flex-end;
+}
+
+
+.msg{
+    font-weight: 400;
+    font-size: 12px;
+    color: black;
+    background-color: wheat;
+}
+
+
+.chat-card{
+    border-radius: 6px;
+}
+
+
+.btn-no-effect:focus{
+    box-shadow: none;
+}
+
+.very-small{
+    font-size: 6px !important;
+}
+
+
+#close-single-peer-btn {
+    position: fixed;
+    top: 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    border-radius: 0%;
+    z-index: 100;
+}
+
+
+.pointer{
+    cursor: pointer;
+}
+
+
+.record-option{
+    height: 200px;
+    border-radius: 10%;
+    border: 1px solid #17a2b8;
+    cursor: pointer;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+body{
+    background-color:#101010;
+    margin-top: 8px;
+}
+
+.meet-set{
+    background-color: #1c2023;
+    width: 75%;
+    margin-top: 200px;
+    border: 1px solid #a48b8b;
+    color: #baafaf
+}
+
+.custom-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #17a2b8;
+    width: 80%;
+}
+
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+
+@media only screen and (max-width:767px){
+    .chat-col{
+        right: -100vw;
+        width: 100vw;
+        z-index: 99999;
+        transition: 0.3s;
+        top: 47px;
+    }
+  
+    .chat-opened::-webkit-scrollbar {
+        display: none;
+    }
+
+    #chat-messages{
+        height: 60vh;
+    }
+
+    .chat-box{
+        bottom: 90px;
+        margin-bottom: 0px;
+
+    }
+    
+    .card-sm{
+        max-width: 100%;
+        min-width: 50%;
+    }
+
+
+    .local-video{
+        width:40vw;
+    }
+}
+
+
+@media (min-width:768px){
+    .card{
+        width: 50%;
+        z-index: 1000;
+    }
+}
+
+
+/* This CSS is meant for the -- Have a break -- feature */
+/* ############################################################################################### */
+
+* {
+    box-sizing: border-box; }
+  
+.wrapper {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%); 
+z-index: 300000;}
+
+.wrapper-admin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 300000;}
+
+
+.mt-30 {
+margin: 30px 0 0 0; }
+
+.row, .column {
+display: flex; }
+
+.row {
+flex-direction: row; }
+
+.column {
+flex-direction: column; }
+
+.btn:not([disabled]) {
+cursor: pointer; }
+
+.poll-box {
+/* background: linear-gradient(#803af7, #500cc4); */
+background: linear-gradient(grey,black);
+border-radius: 3px;
+box-shadow: 0px 5px 11px -7px #000;
+text-align: center; }
+
+.poll-container {
+padding: 26px 80px;
+position: relative;
+border: 1px solid #cabdbdad; }
+
+.poll-question {
+width: max-content;
+max-width: 700px;
+color: #FFF;
+font-family: "Poppins", sans-serif;
+font-size: 1.3rem; }
+
+.poll-panel.poll-voted {
+overflow: hidden;
+border-radius: 50px; }
+.poll-panel.poll-voted .poll-panel-btn.--user-choice {
+    background: #FFF;
+    color: #000; }
+    .poll-panel.poll-voted .poll-panel-btn.--user-choice:hover {
+    color: #000;
+    background: #FFF; }
+.poll-panel.poll-voted .poll-panel-btn {
+    background: #676464;
+    color: #FFF;
+    border-radius: 0;
+    margin: 0;
+    border: 0;
+    position: relative; }
+    .poll-panel.poll-voted .poll-panel-btn:hover {
+    color: #FFF;
+    background: #676464; }
+    .poll-panel.poll-voted .poll-panel-btn:after {
+    content: attr(data-result);
+    font-size: 9px;
+    display: block;
+    opacity: 0.5;
+    animation: slideWithFade .2s ease; }
+    .poll-panel.poll-voted .poll-panel-btn:active {
+    transform: inherit; }
+    .poll-panel.poll-voted .poll-panel-btn span {
+    display: block; }
+
+.poll-panel {
+width: 100%; }
+.poll-panel-btn {
+    padding: 7px 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: .9rem;
+    width: 100%;
+    border-radius: 50px;
+    border: 1px solid #FFF;
+    margin: 0 20px;
+    color: #FFF;
+    transition: 0.15s cubic-bezier(0.17, 0.67, 0.79, 1.24); }
+    .poll-panel-btn:hover {
+    background: #FFF;
+    color: #000; }
+    .poll-panel-btn:active {
+    transform: scale(0.95); }
+
+@keyframes slideWithFade {
+0% {
+    opacity: 0;
+    transform: translateY(10px); }
+100% {
+    opacity: 1; } }
+
+/* ############################################################################################### */
+
+/* ############################################################################################### bg changer css */
+
+.page-wrapper {
+    display: none;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, 20%); 
+    z-index: 300000;
+    
+}
+.page-wrapper .bg-changer{
+    box-shadow: 1px 1px 5px 3px #acaaaa; 
+    background-color: rgb(34 31 31 / 97%); 
+    height: fit-content; width: fit-content;
+    border-radius: 10px;
+    text-align: center;
+}
+    .page-wrapper .theme {
+      width: 60px;
+      height: 60px;
+      display: inline-block;
+      margin: 2px;
+      background-size: cover;
+
+    }
+    .page-wrapper .theme.selected {
+      border: 3px solid #00c7ff; }
+      
+    .page-wrapper .center {
+        position: absolute;
+        top:80%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+
+      }
+  [data-bg="bg1"] {
+    background-image: url("https://images.unsplash.com/photo-1509697452888-7cdcf2c98813?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fGJhY2tncm91bmR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"); }
+  
+  [data-bg="bg2"] {
+    background-image: url("https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmFja2dyb3VuZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"); }
+  
+  [data-bg="bg3"] {
+    background-image: url("https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fGJhY2tncm91bmR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"); }
+  
+  [data-bg="bg4"] {
+    background-image: url("https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDF8fGJhY2tncm91bmR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"); }
+
+
+/* css for admit popup */
+
+@media  (min-width:768px){
+    .admit{
+        width: 45%;
+    }
+    }
+
+/* access denied */
+
+.wrapper-access-denied {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 300000;}

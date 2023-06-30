@@ -1,0 +1,7 @@
+{
+  "defaultVideoTrack": "hotstar",
+  "data": {
+    "hotstar": "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley",
+    "disneyplus": "https://youtu.be/dQw4w9WgXcQ"
+  }
+}

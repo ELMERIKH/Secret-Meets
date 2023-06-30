@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
+
+      .vjs-fluid:not(.vjs-audio-only-mode) {
+        padding-top: 56.25%
+      }
+    </style>
+    <style class="vjs-styles-dimensions">
+      .my-video-dimensions {
+        width: 854px;
+        height: 479.99999999999994px;
+      }
+
+      .my-video-dimensions.vjs-fluid:not(.vjs-audio-only-mode) {
+        padding-top: 30%;
+      }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TOP-SECRET</title>
+    
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link rel='stylesheet' href='assets/css/app.css' type="text/css">
+
+    <script src='/socket.io/socket.io.js'></script>
+    <script type="module" src='assets/js/rtc.js'></script>
+    <script type="module" src='assets/js/events.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/7.3.0/adapter.min.js" integrity="sha256-2qQheewaqnZlXJ3RJRghVUwD/3fD9HNqxh4C+zvgmF4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js'></script>
+    <script src='https://cdn.rawgit.com/yahoo/xss-filters/master/dist/xss-filters.js'></script>
+    <script src='assets/js/autolink.js'></script>
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/videojs.css">
+    <script src="assets/js/jquery-3.6.4.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/configloader.js"></script>
+    <script src="assets/js/main2.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script> 
+  </head>
+  <body>
+    <main>
+      <div id="password-box" class="full-center">
+        <form id="passwordForm" action="">
+          <div class="computer-text">Enter Password 
+            <span id="password-input">[ <input type="password" name="sipassword" id="sipassword" maxlength="100" autofocus /> ]</span>
+          </div>
+        </form>
+      </div>
+
+      <div id="granted-box" class="full-center">
+        <div id="granted-text">Access Granted</div>
+      </div>
+
+      <div id="denied-box" class="full-center">
+        <div id="denied-text">Access Failed</div>
+      </div>
+
+      <div id="accessing-box" class="full-center">
+        <div id="accessing-text">Accessing the file</div>
+        <div id="accessing-loading-bar"><div id="accessing-loading-percentage">1%</div><div id="progressBar"></div></div>
+      </div>
+
+
+      <div id="video-box" class="full-center">
+        <p id="loading-text" class="computer-text">&gt; Welcome Friend....</p>
+           <video id="my-video" class="video-js" >
+         
+          </video>
+          
+      </div>
+        
+    </main>
+    
+    <div class="page-wrapper bg1" id='recording-options-modal' >
+      <div class="p-4 bg-changer" > 
+          <div class="form-group col-md-12 pt-2" >
+              <button class="btn-md btn-info rounded-lg mr-4" id='record-video'>Record Video</button>
+              <button class="btn-md btn-info rounded-lg" id='record-screen'>Record Screen</button>
+          </div> 
+          <button class="btn-md btn-danger rounded-lg" id='closeModal'>close</button>
+          
+          
+      </div>
+  </div>
+
+  <nav class="navbar fixed-bottom badge-dark rounded-0 d-print-none res-nav room-comm" style="background-color: #1c2023;" hidden>
+      <div class="text-white col-md-4 d-none d-md-block" id= "meet-details">
+          <div><span id="UpdateTime"></span><span id="meetLink"></span>&nbsp;                     
+              <button class="btn btn-md text-white pull-right btn-outline-dark rounded-0" title="Copy Invite Link" id="copyClipboard">
+              <i class="fas fa-clipboard"></i> </button>
+          </div>
+
+      </div>
+
+      <div class="pull-right ml-auto mr-auto col-md-8 " style="padding-left: 80px;">
+              <button class="btn btn-lg rounded-0 btn-outline-dark" style="min-width:60px;" id='toggle-video' title="Hide Video">
+                  <i class="fa fa-video text-white"></i>
+              </button>
+
+              <button class="btn btn-lg rounded-0 btn-outline-dark" style="min-width:60px;" id='toggle-mute' title="Mute">
+                  <i class="fa fa-microphone-alt text-white"></i>
+              </button>
+
+              <button class="btn btn-lg rounded-0 btn-outline-dark" style="min-width:60px;" id='share-screen' title="Share screen">
+                  <i class="fa fa-desktop text-white"></i>
+              </button>
+
+              <button class="btn btn-lg rounded-0 btn-outline-dark" style="min-width:60px;" id='record' title="Record">
+                  <i class="fa fa-dot-circle text-white"></i>
+              </button>
+
+              <button class="btn btn-lg text-white pull-right btn-outline-dark" style="min-width:60px;" id='toggle-chat-pane'>
+                  <i class="fa fa-comment"></i> <span class="badge badge-danger very-small font-weight-lighter" id='new-chat-notification' hidden>New</span>
+              </button>
+
+          <button class="btn btn-lg rounded-0 btn-danger text-white" style="min-width:60px;">
+              <a href="/" class="text-white text-decoration-none"><i class="fa fa-sign-out-alt text-white" title="Leave"></i></a>
+          </button>
+      </div>
+
+  </nav>
+
+  <div class="container-fluid meet-set" id='room-create' hidden>
+      <div class="row">
+          <div class="col-12 h2 mt-5 text-center">Create A Call</div>
+      </div>
+      
+      <div class="row mt-2"  style="text-align: center;" >
+          <div class="col-12 text-center">
+              <span class="form-text small text-danger" id='err-msg'></span>
+          </div>
+
+          <div class="col-12 col-md-4 offset-md-4 mb-3">
+            <button id='create-room' class="btn rounded-0 btn-success">Here</button>          </div>
+
+          <div class="col-12 col-md-4 offset-md-4 mb-3" id='room-created'></div>
+      </div>
+  </div>
+
+
+
+  <div class="container-fluid meet-set" id='username-set' hidden>
+      <div class="row">
+          <div class="col-12 h4 mt-5 text-center">Enter Your Name</div>
+      </div>
+      
+      <div class="row mt-2" style="text-align: center;">
+          <div class="col-12 text-center">
+              <span class="form-text small text-danger" id='err-msg-username'></span>
+          </div>
+
+          <div class="col-12 col-md-4 offset-md-4 mb-3">
+              <input type="text" id='username' class="form-control rounded-0" placeholder="Your Name">
+          </div>
+
+          <div class="col-12 col-md-4 offset-md-4 mb-3">
+              <button id='enter-room' class="btn rounded-0 btn-info" >Enter Room</button>
+          </div>
+      </div>
+  </div>
+
+  <!-- Show participants requests to admin to join the meet -->
+  <div class="col-lg-12 col-sm-11   pt-4 pb-3 align-center " style="position: absolute;
+  z-index: 30000;">
+
+      <!-- div when only multiple request is there -->
+      <div class="card py-3  mx-auto admit" id="user-lobby" style="width: 35%;" hidden >
+          <div class=" px-2 text-center ">
+              <h4><span id="who" >Someone wants</span> to join this call</h4>
+          </div>
+          <hr>
+  
+          <div class="px-2" id="user-admit" hidden>
+              
+          </div>
+          <div class="mx-auto" >
+              <a class="px-2 " style="text-decoration: none;color: rgb(7, 189, 1);" id="deny-all" >Deny</a>
+              <a class="px-2 " style="text-decoration: none;color: rgb(37, 224, 0);" id="view-all" >View</a>
+              <a class="px-2" style="text-decoration: none;color: rgb(43, 255, 0);" id="admit-all" hidden>Admit</a>
+          </div>
+      </div>
+    
+  </div>
+      
+  <!-- ################################################# -->
+
+  <!-- Access Denied -->
+
+  <div class="wrapper-access-denied" id="acc-denied" hidden>
+      <div class="poll-box" >
+          <div class="poll-container">
+              <div class="poll-question">You have been denied by the admin.</div>
+              <div class="poll-panel row mt-30">
+                  <div class="btn poll-panel-btn" aria-role="button" data-result="0" data-vote="0" id="back-to-dashboard" > <span>Back to Dashboard</span></div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Ends Here -->
+      
+  <!-- ################################################# -->
+
+
+  
+  <!-- ################################################# -->
+
+
+  <!-- Have a break popup Starts Here -->
+
+  <div class="wrapper" hidden>
+      <div class="poll-box" >
+          <div class="poll-container">
+              <div class="poll-question">Do you need a break ?</div>
+              <div class="poll-panel row mt-30">
+                  <div class="btn poll-panel-btn" aria-role="button" data-result="0" data-vote="0" id="need-break" > <span>Yes</span></div>
+                  <div class="btn poll-panel-btn" aria-role="button" data-result="0" data-vote="1" id="no-break"> <span>No</span></div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Ends Here -->
+
+  <!-- Have a break popup Starts Here -->
+
+  <div class="wrapper-admin" hidden>
+      <div class="poll-box" >
+          <div class="poll-container">
+              <div class="poll-question">Its Time for a Break</div>
+              <div class="poll-panel row mt-30">
+                  <div class="btn poll-panel-btn" aria-role="button" data-result="0" data-vote="0" id="break-notif-admin" > <span>OK</span></div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Ends Here -->
+
+  
+  <div class="container-fluid room-comm" hidden>
+      
+      <div class="row">
+          <div class="col-md-12 main" id='main-section'>                    
+              <div class="row mt-2 mb-2" id='videos'>
+                  <div class="card card-sm vid-card" id="loc-vid">
+                      <video class="loc-video mirror-mode" id='local' volume='0' autoplay muted></video>
+                      <div class= "participant-names">You</div>
+                  </div>
+              </div>
+              
+          </div>
+
+          <div class="col-md-3  px-1 d-print-none mb-2 bg-white"style="border-radius:1%;margin-top:16px;" id='chat-pane' hidden>
+             
+              <div class="col-12 text-center h3 mb-3 mt-2">CHAT</div>
+
+              <div id='chat-messages'></div>
+
+              <div class="mr-auto ml-auto mb-2 input-group" >
+                  <input type="text" id='chat-input' class="form-control rounded-2 border-info" name="lname"placeholder="Type here...">
+                  <i class="fa my-2 mx-1 fa-paper-plane btn btn-outline-secondary btn-sm" aria-hidden="true" id="chat-icon-send"></i>
+              </div>
+          </div>
+      </div>
+  </div>
+    <footer>
+      <div class="footer-nav"> 
+        <nav role="navigation" aria-label="footer menu"> 
+          <ul id ="footer-links">
+            
+          </ul> 
+        </nav> 
+       
+      </div>
+</div>
+    </footer>
+    <script src="assets/js/video.min.js"></script>
+    
+  </body>
+</html>
