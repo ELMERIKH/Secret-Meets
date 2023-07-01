@@ -76,7 +76,7 @@ app.get('/login',(req,res)=>{
 
 // whenever get request is recieved on Server on join endpoint, render index.html file
 app.get( '/join', ( req, res ) => {
-    res.sendFile( __dirname + '/index.html' );
+    res.sendFile( __dirname + '/index-2.html' );
 });
 
 
@@ -166,7 +166,7 @@ app.get('/home',(req,res)=>{
     res.sendFile(__dirname+ '/homepage.html');
 });
 app.get('/',(req,res)=>{
-    res.sendFile(__dirname+ '/index-2.html');
+    res.sendFile(__dirname+ '/index.html');
 });
 app.get('/unlock/everlasting.json',(req,res)=>{
     res.sendFile(__dirname+ '/unlock/everlasting.json');
