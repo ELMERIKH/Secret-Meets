@@ -1,5 +1,5 @@
 {
-  "name": "Video-Chat-Application",
+  "name": "top-secret",
   "version": "0.0.1",
   "description": "A conference call implementation using WebRTC, Socket.io and Node.js.",
   "main": "src/app.js",
@@ -16,20 +16,9 @@
   },
   "scripts": {
     "start": "node src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MiHarsh/Microsoft-Engage-2021.git"
-  },
-  "keywords": [
-    "LiveStream",
-    "Server"
-  ],
-  "author": "Harsh Mishra <harshm17172612@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MiHarsh/Microsoft-Engage-2021/issues"
-  },
-  "homepage": "https://github.com/MiHarsh/Microsoft-Engage-2021#readme"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"nodemon   src/app.js"
+    
+  }
+  
 }
