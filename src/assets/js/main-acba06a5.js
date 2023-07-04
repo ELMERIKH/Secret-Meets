@@ -93,16 +93,16 @@
                 onselect: function() {
                     this.trigger("instructions:change", "question")
                 }
-            }, {
+            }, */{
                 display: !0,
                 navigate: !0,
-                regex: /^wakeup$/i,
-                label: "wakeup",
+                regex: /^start$/i,
+                label: "Start",
                 description: null,
                 onselect: function() {
-                    this.trigger("instructions:change", "wakeup")
+                    this.trigger("instructions:change", "start")
                 }
-            },*/ {
+            }, {
                 display: !0,
                 navigate: !0,
                 regex: /^join$/i,
@@ -641,13 +641,13 @@
                 }, {
                     type: "typedText",
                     content: 'Enter command. Type "help" to see a list of commands.',
-                    prefix: "root@fsociety:~# ",
+                    prefix: "root@TOP-Secret:~# ",
                     delay: 500
                 }, i],
                 menuPrompt: [{
                     type: "typedText",
                     content: 'Enter command. Type "help" to see a list of commands.',
-                    prefix: "root@fsociety:~# ",
+                    prefix: "root@TOP-Secret:~# ",
                     delay: 500
                 }, i],
                 live: [{

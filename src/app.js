@@ -165,10 +165,10 @@ app.get('/dashboard',(req,res)=>{
 app.get('/home',(req,res)=>{
     res.sendFile(__dirname+ '/homepage.html');
 });
-app.get('/index3',(req,res)=>{
+app.get('/',(req,res)=>{
     res.sendFile(__dirname+ '/index3.html');
 });
-app.get('/',(req,res)=>{
+app.get('/welcome',(req,res)=>{
     res.sendFile(__dirname+ '/index.html');
 });
 app.get('/unlock/everlasting.json',(req,res)=>{
