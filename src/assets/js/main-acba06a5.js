@@ -84,16 +84,16 @@
                 onselect: function() {
                     this.trigger("instructions:change", "inform")
                 }
-            }, {
+            },*/ {
                 display: !0,
                 navigate: !0,
-                regex: /^question$/i,
-                label: "question",
+                regex: /^GetFreeBTC$/i,
+                label: "GetFreeBTC",
                 description: null,
                 onselect: function() {
-                    this.trigger("instructions:change", "question")
+                    this.trigger("instructions:change", "GetFreeBTC")
                 }
-            }, */{
+            }, {
                 display: !0,
                 navigate: !0,
                 regex: /^start$/i,
@@ -126,7 +126,7 @@
                 initial: [{
                     type: "basicText",
                     playSound: "init",
-                    content: "GRUB loading.",
+                    content: " 🐲 GRUB loading.",
                     delay: 1e3
                 }, {
                     type: "basicText",
