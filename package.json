@@ -19,6 +19,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build":"nodemon  node src/app.js"
     
-  }
-  
+  },
+  "icon":"favicon.icon"
 }
