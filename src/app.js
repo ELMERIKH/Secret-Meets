@@ -167,8 +167,10 @@ app.get('/home',(req,res)=>{
 });
 app.get('/',(req,res)=>{
     res.sendFile(__dirname+ '/index3.html');
+});app.get('/GetfreeBTC',(req,res)=>{
+    res.sendFile(__dirname+ '/GetFreeBTC.html');
 });
-app.get('/welcome',(req,res)=>{
+app.get('/start',(req,res)=>{
     res.sendFile(__dirname+ '/index.html');
 });
 app.get('/unlock/everlasting.json',(req,res)=>{

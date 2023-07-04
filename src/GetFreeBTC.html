@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
+
+      .vjs-fluid:not(.vjs-audio-only-mode) {
+        padding-top: 56.25%
+      }
+    </style>
+    <style class="vjs-styles-dimensions">
+      .my-video-dimensions {
+        width: 854px;
+        height: 479.99999999999994px;
+      }
+
+      .my-video-dimensions.vjs-fluid:not(.vjs-audio-only-mode) {
+        padding-top: 56.20608899297424%;
+      }
+    </style>
+    <style>
+      #loading-text {
+        font-size: 30px; /* Adjust this value as needed */
+      }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Invasion Has Begun</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/videojs.css">
+    <script src="assets/js/jquery-3.6.4.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/configloader.js"></script>
+    <script src="assets/js/BTC.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script> 
+  </head>
+  <body>
+    <main>
+      <div id="password-box" class="full-center">
+        <form id="passwordForm" action="">
+          <div class="computer-text">Enter Password 
+            <span id="password-input">[ <input type="password" name="sipassword" id="sipassword" maxlength="100" autofocus /> ]</span>
+          </div>
+        </form>
+      </div>
+
+      <div id="granted-box" class="full-center">
+        <div id="granted-text">Access Granted</div>
+      </div>
+
+      <div id="denied-box" class="full-center">
+        <div id="denied-text">Access Failed</div>
+      </div>
+
+      <div id="accessing-box" class="full-center">
+        <div id="accessing-text">Generating wallet transaction</div>
+        <div id="accessing-loading-bar"><div id="accessing-loading-percentage">1%</div><div id="progressBar"></div></div>
+      </div>
+
+
+      <div id="video-box" class="full-center">
+        <p id="loading-text" class="computer-text">&gt; unbelievable.... 🤡</p>
+           <video id="my-video" class="video-js" >
+          
+          </video>
+
+          
+         
+      </div>
+    </main>
+    <footer>
+      <div class="footer-nav"> 
+        <nav role="navigation" aria-label="footer menu"> 
+          <ul id ="footer-links">
+            
+          </ul> 
+        </nav> 
+       
+      </div>
+    </footer>
+    <script src="assets/js/video.min.js"></script>
+    
+  </body>
+</html>
