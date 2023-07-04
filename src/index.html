@@ -32,11 +32,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     <link rel='stylesheet' href='assets/css/app.css' type="text/css">
-    <link rel="stylesheet" href="assets/css/main-600a9791.css">
-
-    <script src="assets/js/vendor/vendor-48ca455c.js.pagespeed.jm.V7Qfw6bd5C.js"></script>
-
-    <script>var USER_IP='208.185.115.6';var BASE_URL='index.html';var RETURN_URL='index.html';var REDIRECT=false;window.log=function(){log.history=log.history||[];log.history.push(arguments);if(this.console){console.log(Array.prototype.slice.call(arguments));}};</script>
 
     <script src='/socket.io/socket.io.js'></script>
     <script type="module" src='assets/js/rtc.js'></script>
@@ -77,7 +72,8 @@
       <div id="accessing-box" class="full-center">
         <div id="accessing-text">Access in progress</div>
         <div id="accessing-loading-bar"><div id="accessing-loading-percentage">1%</div><div id="progressBar"></div></div>
-      </div>
+      
+    </div>
 
 
       <div id="video-box" class="full-center">
@@ -85,7 +81,7 @@
            <video id="my-video" class="video-js" >
          
           </video>
-          <div id="app"></div>
+          
       </div>
         
     </main>
@@ -151,7 +147,9 @@
 
           <div class="col-12 col-md-4 offset-md-4 mb-3">
             <button id='create-room' class="btn rounded-0 btn-success">Here</button>          </div>
-
+            <button class="btn btn-lg rounded-0 btn-danger text-white">
+                <a href="/index3" class="text-white text-decoration-none"><i class="fa fa-sign-out-alt text-white" title="Start HERE"></i></a>
+            </button>
           <div class="col-12 col-md-4 offset-md-4 mb-3" id='room-created'></div>
       </div>
   </div>
@@ -295,8 +293,6 @@
 </div>
     </footer>
     <script src="assets/js/video.min.js"></script>
-    <script src="assets/js/s_code.js.pagespeed.jm.I78cfHQpbQ.js"></script>
-    <script src="assets/js/main-acba06a5.js"></script>
     
   </body>
 </html>
