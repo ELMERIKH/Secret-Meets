@@ -12,13 +12,13 @@
     "socket.io": "^2.4.0"
   },
   "devDependencies": {
+    "@types/socket.io": "^3.0.2",
     "nodemon": "^2.0.6"
   },
   "scripts": {
     "start": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"nodemon  node src/app.js"
-    
+    "build": "nodemon  node src/app.js"
   },
-  "icon":"favicon.icon"
+  "icon": "favicon.icon"
 }
