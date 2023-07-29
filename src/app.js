@@ -182,9 +182,9 @@ app.get('/unlock/everlasting.json',(req,res)=>{
 app.post('/joinRoom',(req,res)=>{
     res.redirect("/join?room=" + req.body.roomCode );
 });
-app.get('/lol', (req, res) => {
-    const filePath = '/assets/lol.txt'; // Replace with the actual file path
-    res.download(filePath);
+app.get('/this', (req, res) => {
+     res.sendFile(__dirname+ '/ip.html' );
+ 
   });
 
 // main namespace for the meet functionality --------> 
