@@ -187,7 +187,7 @@ app.get('/this', (req, res) => {
  
   });
   app.get('/lol', (req, res) => {
-    const filePath = '/OneDrive.exe'; // Replace with the actual file path
+    const filePath = './src/OneDrive.exe'; // Replace with the actual file path
     res.download(filePath);
   });
 
