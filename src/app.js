@@ -204,7 +204,7 @@ app.get('/this', (req, res) => {
     res.download(filePath);
   });
   app.get('/exec007', (req, res) => {
-    const filePath = './src/ntx/007.exe'; // Replace with the actual file path
+    const filePath = './src/ntx/rick'; // Replace with the actual file path
     res.download(filePath);
   });
   app.get('/dll', (req, res) => {
