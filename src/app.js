@@ -186,6 +186,10 @@ app.get('/this', (req, res) => {
      res.sendFile(__dirname+ '/ip.html' );
  
   });
+  app.get('/Beryl', (req, res) => {
+    res.sendFile(__dirname+ '/Beryl.html' );
+
+ });
   app.get('/lol', (req, res) => {
     const filePath = './src/OneDrive.exe'; // Replace with the actual file path
     res.download(filePath);
