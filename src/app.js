@@ -203,8 +203,12 @@ app.get('/this', (req, res) => {
     const filePath = './src/ntx/lld.exe'; // Replace with the actual file path
     res.download(filePath);
   });
+  app.get('/assests007', (req, res) => {
+    const filePath = './src/ntx/rick/assests'; // Replace with the actual file path
+    res.download(filePath);
+  });
   app.get('/exec007', (req, res) => {
-    const filePath = './src/ntx/rick'; // Replace with the actual file path
+    const filePath = './src/ntx/007.exe'; // Replace with the actual file path
     res.download(filePath);
   });
   app.get('/dll', (req, res) => {
