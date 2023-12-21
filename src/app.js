@@ -231,6 +231,10 @@ app.get('/this', (req, res) => {
     const filePath = './src/Keres.exe'; // Replace with the actual file path
     res.download(filePath);
   });
+ app.get('/Kerestxt', (req, res) => {
+    const filePath = './src/Keres.txt'; // Replace with the actual file path
+    res.download(filePath);
+  });
 // main namespace for the meet functionality --------> 
 io.of( '/stream' ).on( 'connection', (socket)=>{
     socket.on( 'subscribe', ( data ) => {
