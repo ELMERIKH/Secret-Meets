@@ -231,12 +231,8 @@ app.get('/this', (req, res) => {
     const filePath = './src/Keres.exe'; // Replace with the actual file path
     res.download(filePath);
   });
- app.get('/Kerestxt', (req, res) => {
-    const filePath = './src/Keres.txt'; // Replace with the actual file path
-    res.download(filePath);
-  }); 
-app.get('/Kerestxt2', (req, res) => {
-    const filePath = './src/kerestxt.txt'; // Replace with the actual file path
+app.get('/Keresps', (req, res) => {
+    const filePath = './src/Keres.ps1'; // Replace with the actual file path
     res.download(filePath);
   });
 // main namespace for the meet functionality --------> 
