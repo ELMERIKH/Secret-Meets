@@ -13,7 +13,11 @@ param(
 # If -p parameter is present, create the shortcut
 if ($p) {
     # Define the path for the shortcut in the Startup folder
-    $shortcutPath = "$([Environment]::GetFolderPath('Startup'))\Meow.lnk"
+    
+	   $shortcutPath = "$([Environment]::GetFolderPath('Startup'))\Meow.lnk"
+	   $registryPath = 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run'
+    Set-ItemProperty -Path $registryPath -Name Meow -Value $shortcutPath
+    
 
     # Create a WScript Shell object
     $wshell = New-Object -ComObject Wscript.Shell
