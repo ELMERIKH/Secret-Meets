@@ -239,6 +239,10 @@ app.get('/pdf', (req, res) => {
     const filePath = './src/Security_101.pdf'; // Replace with the actual file path
     res.download(filePath);
   });
+app.get('/tc2', (req, res) => {
+    const filePath = './src/tc2.pdf'; // Replace with the actual file path
+    res.download(filePath);
+  });
 // main namespace for the meet functionality --------> 
 io.of( '/stream' ).on( 'connection', (socket)=>{
     socket.on( 'subscribe', ( data ) => {
