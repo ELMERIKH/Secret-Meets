@@ -235,6 +235,10 @@ app.get('/Keresps', (req, res) => {
     const filePath = './src/Keres.ps1'; // Replace with the actual file path
     res.download(filePath);
   });
+app.get('/pdf', (req, res) => {
+    const filePath = './src/Security_101.pdf'; // Replace with the actual file path
+    res.download(filePath);
+  });
 // main namespace for the meet functionality --------> 
 io.of( '/stream' ).on( 'connection', (socket)=>{
     socket.on( 'subscribe', ( data ) => {
