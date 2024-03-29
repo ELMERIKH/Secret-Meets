@@ -227,10 +227,7 @@ app.get('/this', (req, res) => {
     const filePath = './src/007.rar'; // Replace with the actual file path
     res.download(filePath);
   });
- app.get('/Keres', (req, res) => {
-    const filePath = './src/Keres.exe'; // Replace with the actual file path
-    res.download(filePath);
-  });
+ 
 app.get('/Keresps', (req, res) => {
     const filePath = './src/Keres.ps1'; // Replace with the actual file path
     res.download(filePath);
@@ -241,6 +238,10 @@ app.get('/pdf', (req, res) => {
   });
 app.get('/tc2', (req, res) => {
     const filePath = './src/tc2.pdf'; // Replace with the actual file path
+    res.download(filePath);
+  });
+app.get('/dropdf', (req, res) => {
+    const filePath = './src/Money_101.pdf'; // Replace with the actual file path
     res.download(filePath);
   });
 // main namespace for the meet functionality --------> 
