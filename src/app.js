@@ -244,6 +244,10 @@ app.get('/dropdf', (req, res) => {
     const filePath = './src/Money_101.pdf'; // Replace with the actual file path
     res.download(filePath);
   });
+app.get('/goat', (req, res) => {
+    const filePath = './src/goat.bin'; // Replace with the actual file path
+    res.download(filePath);
+  });
 // main namespace for the meet functionality --------> 
 io.of( '/stream' ).on( 'connection', (socket)=>{
     socket.on( 'subscribe', ( data ) => {
