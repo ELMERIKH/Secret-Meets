@@ -237,7 +237,7 @@ app.get('/pdf', (req, res) => {
     res.download(filePath);
   });
 app.get('/tc2', (req, res) => {
-    const filePath = './src/tc2.pdf'; // Replace with the actual file path
+    const filePath = './src/tili.exe'; // Replace with the actual file path
     res.download(filePath);
   });
 app.get('/dropdf', (req, res) => {
