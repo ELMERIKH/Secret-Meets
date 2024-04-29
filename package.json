@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "dependencies": {
     "cookie-parser": "^1.4.5",
-    "ejs": "^3.1.6",
+    "ejs": "^3.1.10",
     "express": "^4.17.1",
     "firebase": "^8.7.0",
     "serve-favicon": "^2.5.0",
